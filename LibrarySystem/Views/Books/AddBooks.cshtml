@@ -1,0 +1,38 @@
+﻿@model Book
+
+<h1 style="color:white">Add Book</h1>
+
+<form enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <label asp-for="Name" class="col-3 labelB"></label>
+        <input asp-for="Name" class="col-6 form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="row">
+        <label asp-for="AuthorName" class="col-3 labelB"></label>
+        <input asp-for="AuthorName" class="col-6 form-control" />
+        <span asp-validation-for="AuthorName" class="text-danger"></span>
+    </div>
+    <div class="row">
+        <label asp-for="Category" class="col-3 labelB"></label>
+        <input asp-for="Category" class="col-6 form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+    <div class="row">
+        <label asp-for="Count" class="col-3 labelB"></label>
+        <input asp-for="Count" class="col-6 form-control" />
+        <span asp-validation-for="Count" class="text-danger"></span>
+    </div>
+    <div class="row">
+        <label asp-for="Price" class="col-3 labelB"></label>
+        <input asp-for="Price" class="col-6 form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="row">
+        <label asp-for="ImageName" class="col-5 labelB"></label>
+        <input asp-for="ImageFile" class="img" accept="image/*" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>

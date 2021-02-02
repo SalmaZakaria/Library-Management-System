@@ -1,0 +1,33 @@
+﻿@model User
+
+<h1 class="text-center">My Account</h1>
+<div class="flex-container">
+    <div class="cardbo">
+        <a asp-controller="Home" asp-action="Index" style="color:lightgreen"><i class="fas fa-backward"></i></a>
+        <dl>
+            <dd>
+                <div class="text-center">
+                    <img src=@("~/images/" + Model.ImageName) width="250" asp-append-version="true" />
+                </div>
+            </dd>
+            <dt>@Html.DisplayNameFor(u => u.FullName)</dt>
+            <dd>@Model.FullName</dd>
+            <dt>@Html.DisplayNameFor(u => u.Age)</dt>
+            <dd>@Model.Age</dd>
+            <dt>@Html.DisplayNameFor(u => u.book.Name)</dt>
+            <dd>@Model.book.Name</dd>
+            <dt>@Html.DisplayNameFor(u => u.Email)</dt>
+            <dd>@Model.Email</dd>
+            <dt>@Html.DisplayNameFor(e => e.BookID)</dt>
+            <dd>
+                <a asp-controller="Books" asp-action="Details" asp-route-id="@Model.book.ID">@Model.book.Name</a>
+            </dd>
+
+        </dl>
+        <div class="btn-group-sm text-center">
+            <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.ID"><i class="fas fa-user-edit fa-3x"></i></a>
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ID"><i class="fas fa-trash-alt fa-3x"></i></a>
+        </div>
+        <br />
+    </div>
+</div>

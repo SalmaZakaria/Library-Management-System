@@ -1,0 +1,44 @@
+﻿@model Book
+
+<form enctype="multipart/form-data" method="post">
+    <div class="flex-container">
+        <div class="cardReg">
+            <h1 class="text-center log">Edit</h1>
+            <div class="row">
+                <label asp-for="Name" class="col-5"></label>
+                <input asp-for="Name" class="col-8" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <label asp-for="AuthorName" class="col-5"></label>
+                <input asp-for="AuthorName" class="col-8" />
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <label asp-for="Category" class="col-5"></label>
+                <input asp-for="Category" class="col-8" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <label asp-for="Count" class="col-5"></label>
+                <input asp-for="Count" class="col-8" />
+                <span asp-validation-for="Count" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <label asp-for="Price" class="col-5"></label>
+                <input asp-for="Price" class="col-8" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <label asp-for="ImageName" class="col-5"></label>
+                <input asp-for="ImageFile" class="img" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success" style="color: white">Update</button>
+            </div>
+
+        </div>
+    </div>
+</form>

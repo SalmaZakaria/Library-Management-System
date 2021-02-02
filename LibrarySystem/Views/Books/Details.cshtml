@@ -1,0 +1,28 @@
+﻿@model Book
+@using System.Globalization;
+
+<div class="flex-container">
+    <div class="cardbo">
+        <a asp-controller="Books" asp-action="Index" style="color:lightgreen"><i class="fas fa-backward"></i></a>
+        <dl>
+            <dt>@Html.DisplayNameFor(b => b.ImageName)</dt>
+            <dd>
+                <div class="text-center">
+                    <img src=@("~/images/" + Model.ImageName) width="250" asp-append-version="true" />
+                </div>
+            </dd>
+            <dt>@Html.DisplayNameFor(b => b.Name)</dt>
+            <dd>@Model.Name</dd>
+            <dt>@Html.DisplayNameFor(b => b.AuthorName)</dt>
+            <dd>@Model.AuthorName</dd>
+            <dt>@Html.DisplayNameFor(b => b.Category)</dt>
+            <dd>@Model.Category</dd>
+            <dt>@Html.DisplayNameFor(b => b.Count)</dt>
+            <dd>@Model.Count</dd>
+            <dt>@Html.DisplayNameFor(b => b.Price)</dt>
+            <dd>@Model.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-eg"))</dd>
+
+        </dl>
+        <br />
+    </div>
+</div>

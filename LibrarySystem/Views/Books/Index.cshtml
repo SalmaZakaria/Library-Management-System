@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Book>
+
+<br />
+<br />
+<form method="get" asp-controller="Books" asp-action="Index">
+
+    <input type="text" name="SearchText" value="@ViewBag.Search" />
+    <button type="submit" class="btn-sm btn-secondary">
+        <i class="fas fa-search"></i>
+    </button>
+
+</form>
+<br />
+<br />
+<form method="get" asp-controller="Books" asp-action="Index">
+
+    <input type="radio" name="sort" value="asc" checked="@ViewBag.SortA" />
+    <label style="color:white">Ascending</label>
+    <input type="radio" name="sort" value="desc" checked="@ViewBag.SortD" />
+    <label style="color:white">Descending</label>
+
+    <button class="btn btn-primary" type="submit">Order</button>
+</form>
+<br />
+<br />
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Author Name</th>
+            <th>Number of Books Available</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Book B in Model)
+        {
+            <tr>
+                <td>@B.Name</td>
+                <td>@B.Category</td>
+                <td>@B.AuthorName.</td>
+                <td>@B.Count</td>
+                <td>
+                    <div class="btn-group-sm">
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@B.ID"><i class="fas fa-info-circle"></i></a>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@B.ID"><i class="fas fa-user-edit"></i></a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@B.ID"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
